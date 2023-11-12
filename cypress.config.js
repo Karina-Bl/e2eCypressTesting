@@ -11,4 +11,5 @@ module.exports = defineConfig({
       payPalbuyerPassword: "8*sMSbKhP53Zf&mM",
     },
   },
+  env: {},
 });
