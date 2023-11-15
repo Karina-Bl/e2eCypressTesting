@@ -37,11 +37,13 @@ describe("edit paypal buyer profile", () => {
   });
 
   it("adds an email address", () => {
+    cy.intercept("POST", "/myaccount/profile/email/api/create").as("newEmail");
     cy.visit("/myaccount/profile/");
     cy.setCookie("cookie_check", "yes");
     cy.get("#email-section_profile-tile-header-link").click();
     cy.get("#text-input-emailAdd").type(buyerEmail);
     cy.get("#test_addUpdateEmailButton").click();
+    cy.wait("@newEmail");
     cy.get(
       ".ppvx_modal-header__close___2-10-0 > .ppvx_icon-button___1-6-9"
     ).click();
