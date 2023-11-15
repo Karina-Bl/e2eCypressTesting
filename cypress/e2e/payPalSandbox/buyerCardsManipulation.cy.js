@@ -1,3 +1,5 @@
+let username = Cypress.env("payPalBuyer");
+let password = Cypress.env("payPalbuyerPassword");
 const cards = {
   Mastercard: {
     cardType: "master_card",
@@ -19,7 +21,7 @@ const wrongCardNo = 345679;
 describe("paypal buyer sandbox cards manipulation", () => {
   beforeEach(() => {
     cy.session("login", () => {
-      cy.login(Cypress.env("payPalBuyer"), Cypress.env("payPalbuyerPassword"));
+      cy.login(username, password);
     });
   });
   Object.keys(cards).forEach((card) => {
