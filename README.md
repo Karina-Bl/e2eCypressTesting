@@ -29,9 +29,8 @@ To run the tests on your local machine, follow these steps:
 
 $ git clone https://github.com/Karina-Bl/cypressTesting.git
 
-1. Run the tests Cypress Launchpad  using npm from the project's root terminal with the following:
+2. Run the tests Cypress Launchpad  using npm from the project's root terminal with the following:
 $ npm run cypress:open
-Run the test(s) Cypress Launchpad using npm from the project's root terminal with the following command: 
-$ npm run cypress:open
+
 
   
