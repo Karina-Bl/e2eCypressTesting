@@ -34,7 +34,7 @@ describe("paypal buyer sandbox cards manipulation", () => {
       cy.get("#verificationCode").type(cards[card].CVC);
       cy.get('[data-testid="button-submit"]').click();
       cy.get('[data-testid="header"]').contains(
-        `You linked your ${card} Credit`
+        `You linked your ${card}`
       );
       cy.get(".modal-ppvx2-cta").click();
       cy.get(
