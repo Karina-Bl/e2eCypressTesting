@@ -25,14 +25,16 @@ These tests aim to cover different aspects of the website showing how functional
 
 To run the tests on your local machine, follow these steps:
 
+1. Clone this repository:
 ```sh
-# 1. Clone this repository:
 git clone git@github.com:Karina-Bl/e2eCypressTesting.git
-
-# 2. Install dependencies
+```
+2. Install dependencies
+```sh  
 npm i
-
-# 2. Run the tests Cypress Launchpad  using npm from the project's root terminal with the following:
+```
+3. Run the tests Cypress Launchpad  using npm from the project's root terminal with the following:
+```sh
 npm run cypress:open
 ```
 
