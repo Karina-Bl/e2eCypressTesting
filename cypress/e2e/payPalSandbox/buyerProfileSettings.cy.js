@@ -1,6 +1,6 @@
-let username = Cypress.env("payPalBuyer");
-let password = Cypress.env("payPalbuyerPassword");
-let buyerEmail = "buyeremail@testemail.com";
+const username = Cypress.env("payPalBuyer");
+const password = Cypress.env("payPalbuyerPassword");
+const buyerEmail = "buyeremail@testemail.com";
 describe("edit paypal buyer profile", () => {
   beforeEach(() => {
     cy.session("login", () => {
@@ -37,15 +37,14 @@ describe("edit paypal buyer profile", () => {
   });
 
   it("adds an email address", () => {
+    cy.intercept("POST", "/myaccount/profile/email/api/create").as("newEmail");
     cy.visit("/myaccount/profile/");
     cy.setCookie("cookie_check", "yes");
     cy.get("#email-section_profile-tile-header-link").click();
     cy.get("#text-input-emailAdd").type(buyerEmail);
     cy.get("#test_addUpdateEmailButton").click();
-    cy.get(
-      ".ppvx_modal-header__close___2-10-0 > .ppvx_icon-button___1-6-9"
-    ).click();
-    cy.get("#email-section-item_email1_item-content-line").contains(buyerEmail);
+    cy.wait("@newEmail");
+    cy.get('#unconfirmed-email').contains(buyerEmail);
     cy.log("🧤 email adress added");
   });
 
