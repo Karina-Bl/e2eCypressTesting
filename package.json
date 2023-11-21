@@ -3,9 +3,12 @@
     "cypress": "^13.3.3",
     "eslint": "^8.52.0",
     "eslint-config-google": "^0.14.0",
-    "prettier": "^3.0.3"
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1"
   },
   "scripts": {
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   }
 }
