@@ -1,3 +1,10 @@
+Cypress.Commands.add('interceptAppErrors', () => {
+  cy.on('uncaught:exception', (error, runnable) => {
+    console.error('Uncaught exception in the application:', error);
+    return false; 
+  });
+});
+
 Cypress.Commands.add("login", (username, password) => {
   cy.visit("/signin");
   cy.get("#bannerDeclineButton").click();
