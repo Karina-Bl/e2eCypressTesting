@@ -1,7 +1,7 @@
 Cypress.Commands.add('interceptAppErrors', () => {
   cy.on('uncaught:exception', (error, runnable) => {
     console.error('Uncaught exception in the application:', error);
-    return false; // prevent the error from failing the test
+    return false; 
   });
 });
 

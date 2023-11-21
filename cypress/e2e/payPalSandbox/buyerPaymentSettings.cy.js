@@ -1,9 +1,9 @@
 const username = Cypress.env("payPalBuyer");
 const password = Cypress.env("payPalbuyerPassword");
-// to do: uncaught syntax error originates from the app, cy.on('uncaught:exception', ....does not work
 describe("manage buyer payments", () => {
   beforeEach('login', () => {
     cy.interceptAppErrors();
+    // an uncaught syntax error originates from the app
     cy.session('login ', () => {
       cy.login(username, password);
     }) 
